@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Shopping Cart - CE1 Mini Project</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <header>
+        <h1>Grab Goods</h1>
+        <div class="cart-badge">
+            Cart Items: <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <section class="controls">
+        <div class="control-group">
+            <label for="search-input">Search:</label>
+            <input type="text" id="search-input" placeholder="Search product...">
+        </div>
+
+        <div class="control-group">
+            <label for="category-filter">Category:</label>
+            <select id="category-filter">
+                <option value="all">All Categories</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Stationery">Stationery</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="sort-select">Sort By:</label>
+            <select id="sort-select">
+                <option value="default">Default</option>
+                <option value="low-to-high">Price: Low to High</option>
+                <option value="high-to-low">Price: High to Low</option>
+                <option value="name-asc">Name: A to Z</option>
+            </select>
+        </div>
+    </section>
+
+    <div class="main-container">
+        
+        <div class="products-section">
+            <h2>Products</h2>
+            <div id="product-list" class="product-grid">
+            </div>
+        </div>
+
+        <div class="cart-section">
+            <h2>Your Cart</h2>
+            <div id="cart-items" class="cart-items-list">
+            </div>
+
+            <div class="cart-summary">
+                <div class="coupon-box">
+                    <input type="text" id="coupon-input" placeholder="Coupon (SAVE10 / FLAT100)">
+                    <button id="apply-coupon-btn">Apply</button>
+                </div>
+                <p id="coupon-msg" class="coupon-msg"></p>
+
+                <div class="price-details">
+                    <p>Subtotal: <span>₹<span id="subtotal">0</span></span></p>
+                    <p>Discount: <span>- ₹<span id="discount">0</span></span></p>
+                    <hr>
+                    <p class="total-row">Total Payable: <span>₹<span id="final-total">0</span></span></p>
+                </div>
+
+                <button class="checkout-btn" id="checkout-open-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <h3>Checkout Details</h3>
+            <form id="checkout-form">
+                <label>Full Name:</label>
+                <input type="text" id="cust-name" required placeholder="Enter your name">
+
+                <label>Delivery Address:</label>
+                <textarea id="cust-address" required placeholder="Enter delivery address"></textarea>
+
+                <label>Payment Method:</label>
+                <select id="cust-payment">
+                    <option value="Cash on Delivery">Cash on Delivery (COD)</option>
+                    <option value="UPI">UPI</option>
+                    <option value="Card">Debit / Credit Card</option>
+                </select>
+
+                <p class="modal-total">Order Total: ₹<span id="modal-total-amt">0</span></p>
+
+                <div class="modal-buttons">
+                    <button type="submit" class="confirm-btn">Place Order</button>
+                    <button type="button" class="cancel-btn" id="checkout-cancel-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="test.js"></script>
+</body>
+</html>
